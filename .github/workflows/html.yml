@@ -1,0 +1,29 @@
+name: Validar HTML y CSS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Validar HTML
+        run: npx --yes html-validate "**/*.html"
+
+      - name: Comprobar si existe CSS
+        id: css
+        run: |
+          if find . -name "*.css" -not -path "./.git/*" | grep -q .; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validar CSS
+        if: steps.css.outputs.exists == 'true'
+        run: npx --yes stylelint "**/*.css"
