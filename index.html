@@ -14,7 +14,7 @@
         <img src="imagenes/logo.png" alt="Logotipo de Sendeiros do Norte" width="80" height="80">
         <h1>Sendeiros do Norte</h1>
         <p>Club de senderismo para todos los niveles</p>
-        <nav>
+        <nav aria-label="Menú principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#rutas">Rutas</a></li>
@@ -40,7 +40,7 @@
             </figure>
             <blockquote>
                 <p>La montaña no se conquista: se recorre con respeto.</p>
-                 Lema del club
+                <cite>Lema del club
             </blockquote>
             <p>
                 ¿Quieres ver el listado completo? Visita la <a href="rutas.html">página de rutas</a>
@@ -133,10 +133,10 @@
                 <caption>Salidas del otoño de 2026</caption>
                 <thead>
                     <tr>
-                        <th rowspan="2">Mes</th>
-                        <th rowspan="2">Día</th>
-                        <th rowspan="2">Ruta</th>
-                        <th colspan="2">Horario</th>
+                        <th scope="col" rowspan="2">Mes</th>
+                        <th scope="col" rowspan="2">Día</th>
+                        <th scope="col" rowspan="2">Ruta</th>
+                        <th scope="colgroup" colspan="2">Horario</th>
                     </tr>
                     <tr>
                         <th scope="col">Salida</th>
@@ -286,9 +286,9 @@
                     </p>
                     <p>Necesito alquilar:</p>
                     <p>
-                        <input type="checkbox" id="alq-bastones" name="alquiler" value="bastones">
+                        <input type="checkbox" id="alq-bastones" name="bastones" value="si">
                         <label for="alq-bastones">Bastones</label>
-                        <input type="checkbox" id="alq-frontal" name="alquiler" value="frontal">
+                        <input type="checkbox" id="alq-frontal" name="frontal" value="si">
                         <label for="alq-frontal">Linterna frontal</label>
                     </p>
                     <p>
@@ -313,7 +313,7 @@
             <ul>
                 <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia</a></li>
                 <li><a href="mailto:info@sendeirosdonorte.example">Escríbenos por correo</a></li>
-                <li><a href="tel:+34600000000">Llámanos: 600 00 00 00</a></li>
+                <li><a href="tel:+34600000000">Llámanos: 600&nbsp;00&nbsp;00&nbsp;00</a></li>
             </ul>
             <h3>Otras páginas</h3>
             <ul>
@@ -331,7 +331,7 @@
             15000 A Coruña<br>
             España
         </address>
-        <nav>
+        <nav aria-label="Enlaces del pie">
             <ul>
                 <li><a href="aviso-legal.html">Aviso legal</a></li>
                 <li><a href="rutas.html">Todas las rutas</a></li>
